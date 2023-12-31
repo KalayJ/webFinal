@@ -1,0 +1,161 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#sidebar {
+  width: 150px;
+  background-color: #4caf50; /*  renk */
+  padding: 20px;
+  color: #fff; /* Beyaz renk */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -150px; /* Başlangıçta sayfanın solunda olmasını sağlar */
+  transition: left 0.3s; /* Hareketin yumuşak olması için geçiş efekti ekler */
+}
+
+#sidebar div {
+  margin-bottom: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#content {
+  margin-left: 150px;
+  padding: 50px;
+}
+
+#sidebar:hover {
+  left: 0;
+  width: 120px; /* Fare menü barına yaklaştığında menüyü gösterir */
+}
+h2 {
+color: #333;
+}
+
+/* Form Stilleri */
+form {
+background-color: #fff;
+padding: 15px;
+margin-bottom: 20px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+}
+
+input,
+select {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 3px;
+box-sizing: border-box;
+}
+
+button {
+background-color: #4caf50;
+color: white;
+padding: 10px 15px;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #45a049;
+}
+
+/* Tablo Stilleri */
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+padding: 12px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+}
+
+th {
+background-color: #4caf50;
+color: white;
+}
+
+tbody tr:hover {
+background-color: #f5f5f5;
+}
+
+/* İstatistik Kutusu Stilleri */
+#statistics {
+background-color: #fff;
+padding: 15px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+margin-top: 20px;
+}
+
+#courseStatistics {
+margin-top: 15px;
+}
+
+#courseStudents p {
+margin: 5px 0;
+}
+
+#passFailStats,
+#meanScore {
+margin-top: 15px;
+}
+#imageStrip {
+  margin-top: 40px;
+}
+
+.imageText {
+  width: 100%; /* Metin kutucuğu genişliği */
+  height: 30px; /* Metin kutucuğu yüksekliği */
+  line-height: 30px; /* Metin kutucuğu ortalanması */
+  background-color: #3498db; /* Metin kutucuğu arka plan rengi */
+  color: #ffffff; /* Metin rengi */
+  text-align: center; /* Metin kutucuğu içindeki metnin ortalanması */
+  margin-bottom: 10px; /* Metin kutucukları arasındaki boşluk */
+}
+
+.imageBox {
+border-radius: 10px; /* Kenar yuvarlama miktarını isteğinize göre ayarlayabilirsiniz */
+overflow: hidden; /* Yuvarlanmış kenarlar için gereklidir */
+}
+.imageBox:hover {
+transform: scale(1.25); /* Fare üzerine gelindiğinde resmi biraz büyüt */
+}
+
+.imageBox img {
+width: 100%; /* Resmin genişliğini imageBox'a göre ayarlamak için */
+height: auto; /* Oranları korumak için */
+display: block; /* İmageler arasındaki boşlukları kaldırmak için */
+}
+#fixedBar {
+  background-color: #4caf50; /* Çubuğun arka plan rengi */
+  color: #fff; /* Yazı rengi */
+  padding: 2px; /* İç içe geçmiş öğelerden içeri boşluk */
+  position: fixed; /* Sabit pozisyon */
+  top: 0; /* Sayfanın en üstüne sabitle */
+  width: 100%; /* Genişlik 100% */
+  z-index: 1000; /* Diğer öğelerden üstte görünmesini sağlamak için z-index */
+  text-align: center; /* Yazıyı ortala */
+}

@@ -1,0 +1,124 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Bilgi Sistemi</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+    <div id="fixedBar">
+        <h2>Muğla Üniversitesi Öğrenci Bilgilendirme Sistemi</h2>
+    </div>
+    <div id="sidebar">
+        
+        <div id="imageStrip">
+        <h2></h2>
+        <div class="imageBox" onclick="scrollToTop()"><img src="./images/home.jpg" alt="Image 1"></div>
+        <div class="imageBox" onclick="scrollToOffset(265)"><img src="./images/course.jpg" alt="Image 2"></div>
+        <div class="imageBox" onclick="scrollToElement('studentTable')"><img src="./images/Tablo.jpg" alt="Image 3"></div>
+        <div class="imageBox" onclick="scrollToElement('courseStatistics')"><img src="./images/istatistik.jpg" alt="Image 4"></div>
+        </div>
+    </div>
+
+    <div id="content">
+        
+
+        
+
+    <h2>Hoş Geldiniz</h2>
+
+    <!-- Form for Adding Course and Setting Grading Scale -->
+    <form id="courseForm">
+    <label for="courseName">Course Name:</label>
+    <input type="text" id="courseName" name="courseName" required>
+
+    <label for="gradingScale">Grading Scale:</label>
+    <select id="gradingScale" name="gradingScale" required>
+        <option value="10Scale">10 Scale</option>
+        <option value="7Scale">7 Scale</option>
+    </select>
+
+    <button type="button" onclick="addCourse()">Add Course</button>
+    </form>
+
+    <!-- Form for Adding Student -->
+    <form id="studentForm">
+    <label for="selectedCourse">Select Course:</label>
+    <select id="selectedCourse" name="selectedCourse" required>
+        <!-- Course options will be dynamically populated here -->
+    </select>
+
+    <label for="studentID">Student ID:</label>
+    <input type="text" id="studentID" name="studentID" required>
+
+    <label for="studentName">Student Name:</label>
+    <input type="text" id="studentName" name="studentName" required>
+
+    <label for="midtermScore">Midterm Score:</label>
+    <input type="number" id="midtermScore" name="midtermScore" required>
+
+    <label for="finalScore">Final Score:</label>
+    <input type="number" id="finalScore" name="finalScore" required>
+
+    <!-- Radio buttons for selecting grading scale -->
+    <label>Grading Scale:</label>
+    <input type="radio" id="scale10" name="gradingScale" value="10" checked>
+    <label for="scale10">10 Scale</label>
+    <input type="radio" id="scale7" name="gradingScale" value="7">
+    <label for="scale7">7 Scale</label>
+
+    <button type="button" onclick="addStudent()">Add Student</button>
+    </form>
+    <input type="text" id="searchStudentID" placeholder="Search by Student ID" oninput="updateStudentTable()">
+    <input type="text" id="searchStudentName" placeholder="Search by Student Name" oninput="updateStudentTable()">
+    <input type="text" id="searchCourse" placeholder="Search by Course" oninput="updateStudentTable()">
+    <label for="searchPassedFailed">Search by Passed or Failed:</label>
+    <select id="searchPassedFailed" onchange="updateStudentTable()">
+    <option value="">All</option>
+    <option value="passed">Passed</option>
+    <option value="failed">Failed</option>
+    </select>
+
+
+    <!-- Table for Displaying Student Scores -->
+    <table id="studentTable">
+        <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Midterm Score</th>
+            <th>Final Score</th>
+            <th>Letter Grade</th>
+            <th>Action</th>
+            <th>Course</th>
+            <th>Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Student scores will be dynamically populated here -->
+        </tbody>
+    </table>
+    <button onclick="addRandomStudents()">Add Random Students</button>
+    <!-- Statistics Section for Displaying Course Statistics -->
+    <div id="statistics">
+        <h3>Course Statistics</h3>
+        <label for="statCourseSelect">Select Course:</label>
+        <select id="statCourseSelect" name="statCourseSelect" onchange="displayCourseStatistics()" required>
+        <!-- Course options will be dynamically populated here -->
+        </select>
+    
+        <div id="courseStatistics">
+        <h4>Students:</h4>
+        <div id="courseStudents"></div>
+        </div>
+    
+        <div id="passFailStats"></div>
+        <div id="meanScore"></div>
+    </div>
+    
+
+    <script src="script.js"></script>
+    </body>
+    </html>
