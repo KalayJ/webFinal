@@ -1,5 +1,6 @@
 ## Student Course System
 - Link = https://kalayj.github.io/webFinal
+- Github Link = https://github.com/KalayJ/webFinal
 # Project Description
 This project is a web application that simulates the Muğla University Student Information System. The system provides an interface to add, edit, delete, and view student information. Additionally, it allows users to view statistics based on student grades and add random students.
 
